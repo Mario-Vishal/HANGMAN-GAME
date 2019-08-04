@@ -1,9 +1,11 @@
 print('----------------------HANGMAN----------------------')
 print()
-print('Rules:Total 10 guesses \n      User Have To Give the Abstract')
-print('Note:Enter the Movie name without spaces')
+print('Rules:Total 6 guesses \n      User Have To Give the Abstract')
+print()
+print('Note:Enter the Movie name without spaces\nAnd you will not see your typed movie letters as it is hidden\nSo type it correctly')
 import time
-time.sleep(2)
+from colorama import Fore,Back,Style
+time.sleep(4)
 import getpass  
 
 q=getpass.getpass(prompt='Enter The Movie : ')
@@ -13,8 +15,10 @@ f=list(f)
 print()
 d=input('Enter The Description : \n Language: ')
 y=input('Release Date: ')
+print()
 print('Length Of the Movie Name: {}\nLanguage: {}\nYear Of release: {}'.format(len(q),d,y))
 print('Start Guessing!! You Have 6 Tries :')
+print(f)
 time.sleep(2)
 t=6
 def indexes(word,letter):
@@ -35,7 +39,7 @@ while t>0:
         corr+=1
         
     else:
-        print('Not There :)')
+        print('oops-------Not There :)')
         t=t-1
         print('You Have {0} Tries left'.format(t))
         
